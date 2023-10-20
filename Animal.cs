@@ -6,66 +6,62 @@ using System.Threading.Tasks;
 
 namespace ZooAnimalHandler
 {
-    //base class Animal
-    public class Animal
+    //abstract base class Animal
+    public abstract class Animal
     {
         protected string _gender { get; set; }
         protected string _colour { get; set; }
         protected string _name { get; set; }
         protected int _age { get; set; }
-        protected Boolean _healthy { get; set; }
+        protected string _sound { get; set; }
 
-
-        //Default constructor
+        //default constructor
         public Animal()
         {
-            _gender = "unknown";
-            _colour = "unknown";
-            _name = "unknown";
+            _gender = "?";
+            _colour = "?";
+            _name = "?";
             _age = 0;
-            _healthy = true;
+            _sound = "?";
         }
 
-        //Instance constructor with 4 parameters
-        public Animal(string gender, string name, int age, Boolean healthy)
+        //Instance constructor with 5 parameters
+        public Animal(string colour,string gender,string name, int age, string sound)
         {
-
             _gender = gender;
+            _colour = colour;
             _name = name;
             _age = age;
-            _healthy = healthy;
+            _sound = sound;
         }
 
         //method that tells if animal is sick and needs medication
         public void TellAnimalHealth()
         {
-            if (_healthy == true)
+            Random random = new Random();
+            int x = random.Next(0, 2);
+
+            if (x == 0)
             {
                 Console.WriteLine($"{_name} is healthy!");
             }
-            else
+            else if (x == 1)
+
             {
-                Console.WriteLine($"{_name} needs medication.");
+                Console.WriteLine($"{_name} is sick and needs medication!");
+
             }
+            Console.WriteLine();
         }
 
-        //method that tells animals gender/sex
-        public void TellGender()
+        //abstract method that prints animals info, all animals need to override it
+        public abstract void PrintInfo();
+
+        //method that is accessible for all animals
+        public void MakeSound()
         {
-            Console.WriteLine($"{_name} is a {_gender}.");
+            Console.WriteLine($"{_name} says *{_sound}*\n");
         }
 
-        //Method that tells the animals age
-        public void TellAge()
-        {
-            if (_age >= 10)
-            {
-                Console.WriteLine($"{_name} is over 10 years old.");
-            }
-            else if (_age < 10)
-            {
-                Console.WriteLine($"{_name} is younger than 10 years.");
-            }
-        }
     }
 }
