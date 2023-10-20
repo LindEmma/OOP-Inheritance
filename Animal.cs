@@ -9,11 +9,13 @@ namespace ZooAnimalHandler
     //abstract base class Animal
     public abstract class Animal
     {
+        //Field variables 
         protected string _gender { get; set; }
         protected string _colour { get; set; }
         protected string _name { get; set; }
         protected int _age { get; set; }
         protected string _sound { get; set; }
+        protected string _speciesOrBreed { get; set; }
 
         //default constructor
         public Animal()
@@ -23,19 +25,19 @@ namespace ZooAnimalHandler
             _name = "?";
             _age = 0;
             _sound = "?";
+            _speciesOrBreed = "?";
         }
-
-        //Instance constructor with 5 parameters
-        public Animal(string colour,string gender,string name, int age, string sound)
+        //Instance constructor with 6 parameters
+        public Animal(string colour,string gender,string name, int age, string sound,string speciesOrBreed)
         {
             _gender = gender;
             _colour = colour;
             _name = name;
             _age = age;
             _sound = sound;
+            _speciesOrBreed = speciesOrBreed;
         }
-
-        //method that tells if animal is sick and needs medication
+        //method with if-statement that tells if animal is sick and needs medication. Same for all inheriting classes. 
         public void TellAnimalHealth()
         {
             Random random = new Random();
@@ -49,15 +51,13 @@ namespace ZooAnimalHandler
 
             {
                 Console.WriteLine($"{_name} is sick and needs medication!");
-
             }
             Console.WriteLine();
         }
-
-        //abstract method that prints animals info, all animals need to override it
+        //abstract method that prints the animals info, needs to be overrided in inheriting classes. 
         public abstract void PrintInfo();
 
-        //method that is accessible for all animals
+        //method that is accessible in all classes. Same for each class.
         public void MakeSound()
         {
             Console.WriteLine($"{_name} says *{_sound}*\n");

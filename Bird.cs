@@ -2,6 +2,7 @@
 {
     public abstract class Bird : Animal
     {
+        //field variable, unique for Bird.
         protected Boolean _canFly { get; set; }
 
         //default constructor
@@ -13,11 +14,11 @@
             _name = "?";
             _age = 0;
             _sound = "chirp chirp";
+            _speciesOrBreed = "?";
         }
-
-        //Constructor with 6 parameters
-        public Bird(string colour, string gender, string name, int age, string sound, Boolean canFly)
-            : base(colour, gender, name, age, sound)
+        //Constructor that also inherits from Animal class with base-keyword
+        public Bird(string colour, string gender, string name, int age, string sound, Boolean canFly, string speciesOrBreed)
+            : base(colour, gender, name, age, sound,speciesOrBreed)
         {
             _canFly = canFly;
         }
@@ -26,36 +27,18 @@
         {
             if (_canFly == true)
             {
-                Console.WriteLine($"{_name} takes a leap off a cliff and fly away in the horizon... it's majestic!");
+                Console.WriteLine($"{_name} takes a leap off a cliff and flies away over the horizon... it's majestic!");
             }
             else
             {
-                Console.WriteLine($"{_name} takes a leap off a cliff and... falls flat on the ground.\nYikes.\n");
-            }
-            Console.WriteLine();
-        }
-        public override void TellAnimalHealth()
-        {
-            Random random = new Random();
-            int x = random.Next(0, 2);
-
-            if (x == 0)
-            {
-                Console.WriteLine($"{_name} is healthy!");
-
-            }
-            else
-            {
-                Console.WriteLine($"{_name} has the bird flu and needs medication!");
-
+                Console.WriteLine($"{_name} takes a leap off a cliff and... falls flat on the ground.\nYikes.");
             }
             Console.WriteLine();
         }
 
+        // This only makes the method accessible for the classes inheriting this one
         public override void PrintInfo()
         {
-            Console.WriteLine($"Bird info:\nName: {_name}\nGender: {_gender}\nAge: {_age}\nColour: {_colour}\nAbility to fly:{_canFly}");
-            Console.WriteLine();
         }
 
        
