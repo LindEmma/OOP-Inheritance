@@ -10,32 +10,32 @@ namespace ZooAnimalHandler
     public abstract class Animal
     {
         //Field variables 
-        protected string _gender { get; set; }
-        protected string _colour { get; set; }
-        protected string _name { get; set; }
-        protected int _age { get; set; }
-        protected string _sound { get; set; }
-        protected string _speciesOrBreed { get; set; }
+        protected string Gender { get; set; }
+        protected string Colour { get; set; }
+        protected string Name { get; set; }
+        protected int Age { get; set; }
+        protected string Sound { get; set; }
+        protected string SpeciesOrBreed { get; set; }
 
         //default constructor
         public Animal()
         {
-            _gender = "?";
-            _colour = "?";
-            _name = "?";
-            _age = 0;
-            _sound = "?";
-            _speciesOrBreed = "?";
+            Gender = "?";
+            Colour = "?";
+            Name = "?";
+            Age = 0;
+            Sound = "?";
+            SpeciesOrBreed = "?";
         }
         //Instance constructor with 6 parameters
         public Animal(string colour,string gender,string name, int age, string sound,string speciesOrBreed)
         {
-            _gender = gender;
-            _colour = colour;
-            _name = name;
-            _age = age;
-            _sound = sound;
-            _speciesOrBreed = speciesOrBreed;
+            Gender = gender;
+            Colour = colour;
+            Name = name;
+            Age = age;
+            Sound = sound;
+            SpeciesOrBreed = speciesOrBreed;
         }
         //method with if-statement that tells if animal is sick and needs medication. Same for all inheriting classes. 
         public void TellAnimalHealth()
@@ -45,22 +45,25 @@ namespace ZooAnimalHandler
 
             if (x == 0)
             {
-                Console.WriteLine($"{_name} is healthy!");
+                Console.WriteLine($"{Name} is healthy!");
             }
             else if (x == 1)
 
             {
-                Console.WriteLine($"{_name} is sick and needs medication!");
+                Console.WriteLine($"{Name} is sick and needs medication!");
             }
             Console.WriteLine();
         }
         //abstract method that prints the animals info, needs to be overrided in inheriting classes. 
-        public abstract void PrintInfo();
+        public virtual void PrintInfo()
+        {
+            Console.WriteLine($"Animal info:\nSpecies: {SpeciesOrBreed}\nName: {Name}\nGender: {Gender}\nAge: {Age}\nColour: {Colour}\n");
+        }
 
         //method that is accessible in all classes. Same for each class.
         public void MakeSound()
         {
-            Console.WriteLine($"{_name} says *{_sound}*\n");
+            Console.WriteLine($"{Name} says *{Sound}*\n");
         }
 
     }

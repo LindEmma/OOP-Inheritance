@@ -11,12 +11,12 @@ namespace ZooAnimalHandler
         // default constructor
         public Reptile()
         {
-            _gender = "?";
-            _colour = "?";
-            _name = "?";
-            _age = 0;
-            _sound = "?";
-            _speciesOrBreed = "?";
+            Gender = "?";
+            Colour = "?";
+            Name = "?";
+            Age = 0;
+            Sound = "?";
+            SpeciesOrBreed = "?";
         }
         //constructor 
         public Reptile(string colour, string gender, string name, int age, string sound, string speciesOrBreed)
@@ -26,7 +26,7 @@ namespace ZooAnimalHandler
         // Method unique for classes inheriting Reptile
         public void SunBathe()
         {
-            Console.WriteLine($"{_name} finds the best spot to sun bathe: a flat stone directly beneath the UV-lamp. Life is good!\n");
+            Console.WriteLine($"{Name} finds the best spot to sun bathe: a flat stone directly beneath the UV-lamp. Life is good!\n");
         }
         public override void PrintInfo()
         {

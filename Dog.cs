@@ -10,13 +10,13 @@ namespace ZooAnimalHandler
         //default constructor
         public Dog()
         {
-            _fur = "unknown";
-            _gender = "unknown";
-            _colour = "unknown";
-            _name = "unknown";
-            _age = 0;
-            _sound = "Wuff wuff";
-            _speciesOrBreed = "?";
+            Fur = "unknown";
+            Gender = "unknown";
+            Colour = "unknown";
+            Name = "unknown";
+            Age = 0;
+            Sound = "Wuff wuff";
+            SpeciesOrBreed = "?";
         }
 
         public Dog(string fur, string colour, string gender, string name, int age, string sound, string speciesOrBreed)
@@ -27,8 +27,8 @@ namespace ZooAnimalHandler
         //method that is unique to Dog class
         public void PlayCatch()
         {
-            string[] catchResult = {$"You throw a ball and {_name} eagerly catch it and runs back to you. She wants you to throw it again, and again... \nThe circle never ends.\n",
-            $"You throw a ball but {_name} just looks at you with a side eye. You interrupted its nap, how rude.\n", $"You throw a ball and {_name} tries to catch it" +
+            string[] catchResult = {$"You throw a ball and {Name} eagerly catch it and runs back to you. She wants you to throw it again, and again... \nThe circle never ends.\n",
+            $"You throw a ball but {Name} just looks at you with a side eye. You interrupted its nap, how rude.\n", $"You throw a ball and {Name} tries to catch it" +
             $" but miss and run into a tree. So clumsy, but adorable!\n"};
             
             //randomizes the outcome of PlayCatch from the catchResult array. Dog will react in different ways.
@@ -36,7 +36,7 @@ namespace ZooAnimalHandler
         }
         public override void PrintInfo()
         {
-            Console.WriteLine($"Dog info:\nBreed: {_speciesOrBreed}\nName: {_name}\nGender: {_gender}\nAge: {_age}\nColour: {_colour}\nFur length: {_fur}\n");
+            Console.WriteLine($"Dog info:\nBreed: {SpeciesOrBreed}\nName: {Name}\nGender: {Gender}\nAge: {Age}\nColour: {Colour}\nFur length: {Fur}\n");
         }
     }
 }

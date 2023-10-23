@@ -8,27 +8,27 @@ namespace ZooAnimalHandler
 {
     internal class Snake : Reptile
     {
-        protected Boolean _venomous { get; set; }
+        protected bool Venomous { get; set; }
         public Snake()
         {
-            _venomous = true;
-            _gender = "?";
-            _colour = "?";
-            _name = "?";
-            _age = 0;
-            _sound = "?";
+            Venomous = true;
+            Gender = "?";
+            Colour = "?";
+            Name = "?";
+            Age = 0;
+            Sound = "?";
         }
-        public Snake(string colour, string gender, string name, int age, string sound, Boolean venomous, string speciesOrBreed)
+        public Snake(string colour, string gender, string name, int age, string sound, bool venomous, string speciesOrBreed)
             : base(colour, gender, name, age, sound, speciesOrBreed)
         {
-            _venomous = venomous;
+            Venomous = venomous;
         }
         // unique method for Snake class. If the snake is venomous, user is told to get an antidote.
         public void Bite()
         {
             {
-                Console.WriteLine($"{_name} bites you while petting it, rude!");
-                if (_venomous == true)
+                Console.WriteLine($"{Name} bites you while petting it, rude!");
+                if (Venomous == true)
                 {
                     Console.WriteLine($"The snake is poisonous...You should probably ask the zoo keepers for an antidote.\n");
                 }
@@ -40,7 +40,7 @@ namespace ZooAnimalHandler
         }
         public override void PrintInfo()
         {
-            Console.WriteLine($"Snake info:\nSpecies: {_speciesOrBreed}\nName: {_name}\nGender: {_gender}\nAge: {_age}\nColour: {_colour}\n");
+            Console.WriteLine($"Snake info:\nSpecies: {SpeciesOrBreed}\nName: {Name}\nGender: {Gender}\nAge: {Age}\nColour: {Colour}\n");
         }
     }
 }

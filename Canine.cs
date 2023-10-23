@@ -2,32 +2,29 @@
 {
     public abstract class Canine : Animal
     {
-        protected string _fur { get; set; }
+        protected string Fur { get; set; }
 
         //default constructor
         public Canine()
         {
-            _fur = "unknown";
-            _gender = "unknown";
-            _colour = "unknown";
-            _name = "unknown";
-            _age = 0;
-            _sound = "gnyl";
-            _speciesOrBreed = "?";
+            Fur = "unknown";
+            Gender = "unknown";
+            Colour = "unknown";
+            Name = "unknown";
+            Age = 0;
+            Sound = "gnyl";
+            SpeciesOrBreed = "?";
         }
         //constructor with 5 parameters
         public Canine(string fur, string colour, string gender, string name, int age, string sound, string speciesOrBreed)
-            : base(colour, gender, name, age, sound,speciesOrBreed)
+            : base(colour, gender, name, age, sound, speciesOrBreed)
         {
-            _fur = fur;
+            Fur = fur;
         }
         //method that is inherited by all canines (dog and wolf)
         public void WagTail()
         {
-            Console.WriteLine($"{_name} is happy and wags its tail!\n");
-        }
-        public override void PrintInfo()
-        {
+            Console.WriteLine($"{Name} is happy and wags its tail!\n");
         }
     }
 }

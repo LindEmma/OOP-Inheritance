@@ -10,12 +10,12 @@ namespace ZooAnimalHandler
     {
         public Tortoise()
         {
-            _speciesOrBreed = "?";
-            _gender = "?";
-            _colour = "?";
-            _name = "?";
-            _age = 0;
-            _sound = "?";
+            SpeciesOrBreed = "?";
+            Gender = "?";
+            Colour = "?";
+            Name = "?";
+            Age = 0;
+            Sound = "?";
         }
         public Tortoise(string colour, string gender, string name, int age, string sound, string speciesOrBreed)
             : base(colour, gender, name, age, sound, speciesOrBreed)
@@ -24,11 +24,11 @@ namespace ZooAnimalHandler
         //unique method for Turtle class
         public void Hide()
         {
-            Console.WriteLine($"{_name} is a bit scared and hides in its shell\n");
+            Console.WriteLine($"{Name} is a bit scared and hides in its shell\n");
         }
         public override void PrintInfo()
         {
-            Console.WriteLine($"Tortoise info:\nSpecies: {_speciesOrBreed}\nName: {_name}\nGender: {_gender}\nAge: {_age}\nColour: {_colour}\n");
+            Console.WriteLine($"Tortoise info:\nSpecies: {SpeciesOrBreed}\nName: {Name}\nGender: {Gender}\nAge: {Age}\nColour: {Colour}\n");
         }
     }
 }
