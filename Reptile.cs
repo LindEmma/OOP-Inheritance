@@ -28,8 +28,5 @@ namespace ZooAnimalHandler
         {
             Console.WriteLine($"{Name} finds the best spot to sun bathe: a flat stone directly beneath the UV-lamp. Life is good!\n");
         }
-        public override void PrintInfo()
-        {
-        }
     }
 }

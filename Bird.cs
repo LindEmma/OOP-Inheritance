@@ -35,12 +35,5 @@
             }
             Console.WriteLine();
         }
-
-        // This only makes the method accessible for the classes inheriting this one
-        public override void PrintInfo()
-        {
-        }
-
-       
     }
 }

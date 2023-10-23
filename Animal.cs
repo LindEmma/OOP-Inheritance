@@ -54,7 +54,7 @@ namespace ZooAnimalHandler
             }
             Console.WriteLine();
         }
-        //abstract method that prints the animals info, needs to be overrided in inheriting classes. 
+        //virtual method that prints the animals info, can be overrided in inheriting classes. 
         public virtual void PrintInfo()
         {
             Console.WriteLine($"Animal info:\nSpecies: {SpeciesOrBreed}\nName: {Name}\nGender: {Gender}\nAge: {Age}\nColour: {Colour}\n");
